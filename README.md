@@ -5,4 +5,5 @@ This project uses the XGBoost model to predict the species of an Iris flower bas
 ## Links
 
 - [Dataset on Kaggle](https://www.kaggle.com/datasets/uciml/iris)  
-- [My Notebook on Kaggle](https://www.kaggle.com/code/ahmedgaitani/iris-species-code)  
+- [My Notebook on Kaggle](https://www.kaggle.com/code/ahmedgaitani/iris-species-code)
+- [Iris Model Docker Image](https://hub.docker.com/r/ahmadgaitani/iris_model_image)
