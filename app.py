@@ -5,7 +5,6 @@ import joblib
 
 app = FastAPI()
 
-# تحميل النموذج
 model = joblib.load("xgboost_iris_model.joblib")
 
 class IrisInput(BaseModel):
@@ -22,7 +21,7 @@ async def read_root():
 @app.post("/predict")
 async def predict(input_data: IrisInput):
     data = [[input_data.sepal_length, input_data.sepal_width, input_data.petal_length, input_data.petal_width]]
-    prediction = model.predict(data)[0]  # احصل على القيمة مباشرة
+    prediction = model.predict(data)[0] 
     
     species = {0: "Iris Setosa", 1: "Iris Versicolor", 2: "Iris Virginica"}
     predicted_species = species.get(prediction, "Unknown species")
