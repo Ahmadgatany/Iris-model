@@ -7,72 +7,78 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            direction: rtl; /* الاتجاه من اليمين إلى اليسار */
-            background-color: #f8f9fa; /* خلفية فاتحة */
+            direction: ltr; 
+            background-color: #f8f9fa; 
             margin: 0;
             padding: 20px;
             display: flex;
-            justify-content: center; /* توسيط المحتوى عمودياً */
-            align-items: center; /* توسيط المحتوى أفقياً */
-            height: 100vh; /* ارتفاع الصفحة بالكامل */
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
         }
         .container {
-            background-color: white; /* خلفية النموذج */
-            padding: 20px; /* فراغ داخلي */
-            border-radius: 8px; /* زوايا مستديرة */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل للمربع */
-            width: 300px; /* عرض النموذج */
+            background-color: white; 
+            padding: 20px;
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            width: 300px; 
         }
         h1 {
-            color: #007bff; /* لون العنوان */
-            text-align: center; /* توسيط العنوان */
+            color: #007bff; 
+            text-align: center; 
         }
         label {
             display: block;
-            margin: 10px 0 5px; /* فراغات حول التسمية */
+            margin: 10px 0 5px; 
         }
         input[type="text"] {
-            width: calc(100% - 20px); /* عرض الإدخالات بالكامل مع الأخذ في الاعتبار الفراغات */
-            padding: 10px; /* فراغ داخلي */
-            margin-bottom: 20px; /* فراغ أسفل */
-            border: 1px solid #ced4da; /* إطار خفيف */
-            border-radius: 4px; /* زوايا مستديرة */
-            box-sizing: border-box; /* تشمل الحشو والحدود في العرض */
+            width: calc(100% - 20px); 
+            padding: 10px; 
+            margin-bottom: 20px; 
+            border: 1px solid #ced4da; 
+            border-radius: 4px; 
+            box-sizing: border-box; 
         }
         button {
-            background-color: #007bff; /* لون الزر */
-            color: white; /* لون النص */
-            padding: 10px 15px; /* فراغ داخلي */
-            border: none; /* بدون إطار */
-            border-radius: 4px; /* زوايا مستديرة */
-            cursor: pointer; /* شكل المؤشر عند التمرير */
-            width: 100%; /* عرض الزر بالكامل */
+            background-color: #007bff; 
+            color: white; 
+            padding: 10px 15px; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            width: 100%; 
         }
         button:hover {
-            background-color: #0056b3; /* تغيير اللون عند التمرير */
+            background-color: #0056b3; 
         }
         #result {
-            margin-top: 20px; /* فراغ أعلى */
-            padding: 10px; /* فراغ داخلي */
-            background-color: #e2e3e5; /* خلفية متوسطة */
-            border-radius: 4px; /* زوايا مستديرة */
-            text-align: center; /* توسيط النص في النتيجة */
+            margin-top: 20px; 
+            padding: 10px; 
+            background-color: #e2e3e5; 
+            border-radius: 4px; 
+            text-align: center; 
         }
     </style>
 </head>
 <body>
+
+
     <div class="container">
-        <h1>توقع نوع زهرة إيريس</h1>
+        <h1>Predict Iris Flower Species</h1>
         <form id="predictForm">
-            <label for="sepal_length">طول السبلة:</label>
+            <label for="sepal_length">Sepal Length:</label>
             <input type="text" id="sepal_length" name="sepal_length" required>
-            <label for="sepal_width">عرض السبلة:</label>
+        
+            <label for="sepal_width">Sepal Width:</label>
             <input type="text" id="sepal_width" name="sepal_width" required>
-            <label for="petal_length">طول البتلة:</label>
+        
+            <label for="petal_length">Petal Length:</label>
             <input type="text" id="petal_length" name="petal_length" required>
-            <label for="petal_width">عرض البتلة:</label>
+        
+            <label for="petal_width">Petal Width:</label>
             <input type="text" id="petal_width" name="petal_width" required>
-            <button type="submit">توقع</button>
+        
+            <button type="submit">Predict</button>
         </form>
         <div id="result"></div>
     </div>
@@ -90,9 +96,10 @@
                 },
                 body: JSON.stringify(data),
             });
-
+            
             const result = await response.json();
-            document.getElementById('result').innerText = `النتيجة: ${result.prediction}`; // عرض اسم الزهرة فقط
+            document.getElementById('result').innerText = `Result: ${result.prediction}`;
+
         };
     </script>
 </body>
